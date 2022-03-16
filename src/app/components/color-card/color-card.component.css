@@ -1,6 +1,7 @@
 .container__color{
     width: 100%;
     display: grid;
+    grid-template-columns: 1fr 1.5fr;
     align-items: center;
     box-sizing: border-box;
 
@@ -11,12 +12,12 @@
 
     transition: transform .2s;
 }
-.container__color:hover{
+/* .container__color:hover{
     transform: translateY(-3px);
-}
+} */
 .info{
-    display: grid;
-    grid-template-columns: 1fr 1.5fr;
+    display: flex;
+    flex-direction: column;
 }
 .list{
     list-style: none;
@@ -48,7 +49,7 @@
 }
 .level__container{
     height: .5rem;
-    width: 3rem;
+    width: 1.5rem;
     border: 1px solid #1f1f1f;
 }
 .color__level{

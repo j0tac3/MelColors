@@ -23,7 +23,7 @@ export class ColorCardComponent implements OnInit {
   }
 
   onChangeColorLevel(){
-    const newLevel = this.color.level_color! + 20;
+    const newLevel = this.color.level_color! + 35;
     if(newLevel < 100){
       this.color.level_color! = newLevel;
     } else if(this.color.level_color === 100){
