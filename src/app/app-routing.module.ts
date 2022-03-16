@@ -1,10 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { HomeComponent } from './pages/home/home.component';
 
-const routes: Routes = [];
+const APP_ROUTES: Routes = [
+  {path: 'home', component: HomeComponent },
+  /* {path: 'administrar', component: AdministrarComponent,
+    children: ADMINISTRAR_ROUTES,
+  }, */
+  {path: '', pathMatch: 'full', redirectTo: 'home'}
+];
 
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
-})
-export class AppRoutingModule { }
+export const APP_ROUTING = RouterModule.forRoot(APP_ROUTES, { relativeLinkResolution: 'legacy' });

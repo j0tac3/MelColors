@@ -1,0 +1,96 @@
+.container__color{
+    width: 100%;
+    display: grid;
+    align-items: center;
+    box-sizing: border-box;
+
+    font-size: small;
+    color: #1f1f1f;
+    background-color: #ffff;
+    border: 1px solid #aaaa;
+
+    transition: transform .2s;
+}
+.container__color:hover{
+    transform: translateY(-3px);
+}
+.info{
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+}
+.list{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    padding: .5rem;
+}
+.actions{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    align-items: center;
+}
+.color__image{
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    border: 1px solid #7777;
+}
+.favourite__icon{
+    width: 1.1rem;
+    transition: transform .3s;
+}
+.favourite__icon:hover{
+    cursor: pointer;
+    animation-name: favanimation;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+}
+.level__container{
+    height: .5rem;
+    width: 3rem;
+    border: 1px solid #1f1f1f;
+}
+.color__level{
+    width: 1px;
+    height: 100%;
+    transition: width .5s;
+}
+.level__container{
+    transition: transform .3s;
+}
+.level__container:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+.color__level-green{
+    background-color: green;
+}
+.color__level-greenyellow{
+    background-color: greenyellow;
+}
+.color__level-orange{
+    background-color: orange;
+}
+.color__level-orangered{
+    background-color: orangered;
+}
+.color__level-red{
+    background-color: red;
+}
+
+
+@keyframes favanimation {
+    0%{
+        transform: scale(1.2);
+    }
+    20%{
+        transform: scale(1.1);
+    }
+    40%{
+        transform: scale(1.2);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
