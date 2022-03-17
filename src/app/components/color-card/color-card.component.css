@@ -1,7 +1,7 @@
 .container__color{
     width: 100%;
     display: grid;
-    margin: 1rem 0;
+    margin-bottom: .5rem;
     align-items: center;
     box-sizing: border-box;
 
@@ -10,10 +10,8 @@
     transition: transform .2s;
 }
 .info{
-    display: grid;
-    grid-template-columns: 1fr 1.5fr;
     font-size: medium;
-    color: #1f1f1f;
+    color: #777;
 }
 .list{
     list-style: none;
