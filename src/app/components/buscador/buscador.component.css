@@ -1,0 +1,23 @@
+.buscador{
+    margin: 1rem auto;
+    width: 10rem;
+    display: flex;
+    justify-content: center;
+}
+.buscador__input{
+    border: 1px solid #7777;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    outline: none;
+    padding: 0 1rem;
+    height: 100%;
+    box-sizing: border-box;
+}
+.buscador__icon{
+    width: 3rem;
+    border: 1px solid #7777;
+    padding: .3rem;
+    box-sizing: border-box;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}

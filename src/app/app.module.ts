@@ -8,6 +8,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { ColorListComponent } from './components/color-list/color-list.component';
 import { ColorCardComponent } from './components/color-card/color-card.component';
 import { HeaderComponent } from './components/header/header.component';
+import { BuscadorComponent } from './components/buscador/buscador.component';
+import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,11 +17,13 @@ import { HeaderComponent } from './components/header/header.component';
     HomeComponent,
     ColorListComponent,
     ColorCardComponent,
-    HeaderComponent
+    HeaderComponent,
+    BuscadorComponent
   ],
   imports: [
     BrowserModule,
-    APP_ROUTING
+    APP_ROUTING,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

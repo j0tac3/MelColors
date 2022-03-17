@@ -7,7 +7,7 @@ import { Color } from 'src/app/models/color.model';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  public colors = [
+  private colors = [
     new Color(new Object({number:'70.951',description_en:'White',description_es:'Blanco', color:'#ffffff', level_color:0, isFavourite:false, itHasColor:false})),
     new Color(new Object({number:'70.919',description_en:'Cold White',description_es:'Blanco Frio',color:'#ffffff', level_color:0, isFavourite:false, itHasColor:false})),
     new Color(new Object({number:'70.842',description_en:'Gloss White',description_es:'Blanco Brillo', color:'#f5f3f4', level_color:0, isFavourite:false, itHasColor:false})),
@@ -22,11 +22,28 @@ export class HomeComponent implements OnInit {
     new Color(new Object({number:'70.806',description_en:'German Yellow',description_es:'Amarillo Lasur', color:'#cbbe78', level_color:0, isFavourite:false, itHasColor:false})),
     new Color(new Object({number:'70.858',description_en:'Ice Yellow',description_es:'Amarillo Ice', color:'#f7d897', level_color:0, isFavourite:false, itHasColor:false})),
     new Color(new Object({number:'70.915',description_en:'Ice Yellow',description_es:'Amarillo Ice', color:'#ffe20e', level_color:0, isFavourite:false, itHasColor:false})),
-                  ];
+  ];
+
+  public colorToSee! : Color[];
 
   constructor() { }
 
   ngOnInit(): void {
+    this.colorToSee = this.colors;
+  }
+
+  onTextToSearch(text : any){
+    if (text !== ''){
+      this.colorToSee = this.filterItems(text);
+    } else {
+      this.colorToSee = this.colors;
+    }
+  }
+  
+  filterItems(query : string) {
+    return this.colors.filter(function(color) {
+        return color.number!.toLowerCase().indexOf(query.toLowerCase()) > -1;
+    })
   }
 
 }
