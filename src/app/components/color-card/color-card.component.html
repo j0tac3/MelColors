@@ -1,5 +1,5 @@
-<div class="container__color">
-    <div class="info">
+<div class="container__color" [style.background]="'linear-gradient(90deg, rgba(255,255,255,1) 0%, '+color.color+' 100%)'">
+    <div class="info" >
         <div class="color__description">
             <ul class="list descriptions">
                 <li class="description">{{ color.number }}</li>
@@ -7,8 +7,8 @@
                 <li class="description">{{ color.description_es }}</li>
             </ul>
         </div>
-        <div class="color__image" [style.background-color]="color.color">
-        </div>
+       <!--  <div class="color__image" >
+        </div> -->
     </div>
     <ul class="list actions">
         <li>

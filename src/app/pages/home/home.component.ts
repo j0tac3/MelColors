@@ -26,7 +26,6 @@ export class HomeComponent implements OnInit {
     new Color(new Object({number:'70.948',description_en:'Golden Yellow',description_es:'Amarillo Dorado', color:'#f7b555', level_color:0, isFavourite:false, itHasColor:false})),
     new Color(new Object({number:'70.815',description_en:'Basic Skin Tone',description_es:'Carne Base', color:'#f0ba9e', level_color:0, isFavourite:false, itHasColor:false})),
     new Color(new Object({number:'70.955',description_en:'Flat Flesh',description_es:'Carne Mate', color:'#e0a579', level_color:0, isFavourite:false, itHasColor:false})),
-
   ];
 
   public colorToSee! : Color[];
