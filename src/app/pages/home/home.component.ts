@@ -20,8 +20,13 @@ export class HomeComponent implements OnInit {
     new Color(new Object({number:'70.949',description_en:'Light Yellow',description_es:'Amarillo Claro', color:'#fce856', level_color:0, isFavourite:false, itHasColor:false})),
     new Color(new Object({number:'70.952',description_en:'Lemon Yellow',description_es:'Amarillo Limon', color:'#fbea20', level_color:0, isFavourite:false, itHasColor:false})),
     new Color(new Object({number:'70.806',description_en:'German Yellow',description_es:'Amarillo Lasur', color:'#cbbe78', level_color:0, isFavourite:false, itHasColor:false})),
-    new Color(new Object({number:'70.858',description_en:'Ice Yellow',description_es:'Amarillo Ice', color:'#f7d897', level_color:0, isFavourite:false, itHasColor:false})),
-    new Color(new Object({number:'70.915',description_en:'Ice Yellow',description_es:'Amarillo Ice', color:'#ffe20e', level_color:0, isFavourite:false, itHasColor:false})),
+    new Color(new Object({number:'70.858',description_en:'Ice Yellow',description_es:'Amarillo hielo', color:'#f7d897', level_color:0, isFavourite:false, itHasColor:false})),
+    new Color(new Object({number:'70.915',description_en:'Deep Yellow',description_es:'Amarillo Intenso', color:'#ffe20e', level_color:0, isFavourite:false, itHasColor:false})),
+    new Color(new Object({number:'70.953',description_en:'Flat Yellow',description_es:'Amarillo Mate', color:'#f7b634', level_color:0, isFavourite:false, itHasColor:false})),
+    new Color(new Object({number:'70.948',description_en:'Golden Yellow',description_es:'Amarillo Dorado', color:'#f7b555', level_color:0, isFavourite:false, itHasColor:false})),
+    new Color(new Object({number:'70.815',description_en:'Basic Skin Tone',description_es:'Carne Base', color:'#f0ba9e', level_color:0, isFavourite:false, itHasColor:false})),
+    new Color(new Object({number:'70.955',description_en:'Flat Flesh',description_es:'Carne Mate', color:'#e0a579', level_color:0, isFavourite:false, itHasColor:false})),
+
   ];
 
   public colorToSee! : Color[];
@@ -42,7 +47,9 @@ export class HomeComponent implements OnInit {
   
   filterItems(query : string) {
     return this.colors.filter(function(color) {
-        return color.number!.toLowerCase().indexOf(query.toLowerCase()) > -1;
+        return (color.number!.toLowerCase().indexOf(query.toLowerCase()) > -1) || 
+                (color.description_en!.toLowerCase().indexOf(query.toLowerCase()) > -1) ||
+                (color.description_es!.toLowerCase().indexOf(query.toLowerCase()) > -1);
     })
   }
 
