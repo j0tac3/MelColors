@@ -1,21 +1,17 @@
 .container__color{
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr 1.5fr;
+    margin: 1rem 0;
     align-items: center;
     box-sizing: border-box;
 
     background-color: #ffff;
-    border: 1px solid #aaaa;
 
     transition: transform .2s;
 }
-/* .container__color:hover{
-    transform: translateY(-3px);
-} */
 .info{
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
     font-size: medium;
     color: #1f1f1f;
 }
@@ -25,7 +21,7 @@
     padding: .5rem;
 }
 .actions{
-    width: 100%;
+    width: 8rem;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     justify-items: center;
@@ -36,7 +32,7 @@
     width: 100%;
     height: 100%;
     box-sizing: border-box;
-    border-left: 1px solid #7777;
+    border-left: 1px solid #bbbb;
     display: flex;
     align-items: center;
     justify-content: space-evenly;

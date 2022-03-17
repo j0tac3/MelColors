@@ -7,43 +7,43 @@
                 <li class="description">{{ color.description_es }}</li>
             </ul>
         </div>
+        <div class="color__image" [style.background-color]="color.color">
+        </div>
     </div>
-    <div class="color__image" [style.background-color]="color.color">
-        <ul class="list actions">
-            <li>
-                <div class="action" (click)="onAddFavourite()">
-                    <img    src="assets/media/icons/fav_disabled.svg" 
-                            alt=""
-                            class="favourite__icon"
-                            *ngIf="!color.isFavourite">
-                    <img    src="assets/media/icons/fav_enabled.svg" 
-                            alt=""
-                            class="favourite__icon"
-                            *ngIf="color.isFavourite">
+    <ul class="list actions">
+        <li>
+            <div class="action" (click)="onAddFavourite()">
+                <img    src="assets/media/icons/fav_disabled.svg" 
+                        alt=""
+                        class="favourite__icon"
+                        *ngIf="!color.isFavourite">
+                <img    src="assets/media/icons/fav_enabled.svg" 
+                        alt=""
+                        class="favourite__icon"
+                        *ngIf="color.isFavourite">
+            </div>
+        </li>
+        <li>
+            <div class="action">
+                <input  type="checkbox" 
+                        [checked]="color.itHasColor"
+                        (click)="onAddColor()"> 
+            </div>
+        </li>
+        <li>
+            <div    [hidden]="!color.itHasColor"
+                    class="action level__container"
+                    (click)="onChangeColorLevel()">
+                <div    class="color__level"
+                        [style.width.%]="color.level_color"
+                        [ngClass]="{'color__level-green': color.level_color! >= 65,
+                                    'color__level-greenyellow': color.level_color! >= 50 && color.level_color! < 65,
+                                    'color__level-orange': color.level_color! < 50 && color.level_color! >= 35,
+                                    'color__level-orangered': color.level_color! < 35 && color.level_color! >= 20,
+                                    'color__level-red': color.level_color! < 20
+                                    }">
                 </div>
-            </li>
-            <li>
-                <div class="action">
-                    <input  type="checkbox" 
-                            [checked]="color.itHasColor"
-                            (click)="onAddColor()"> 
-                </div>
-            </li>
-            <li>
-                <div    [hidden]="!color.itHasColor"
-                        class="action level__container"
-                        (click)="onChangeColorLevel()">
-                    <div    class="color__level"
-                            [style.width.%]="color.level_color"
-                            [ngClass]="{'color__level-green': color.level_color! >= 65,
-                                        'color__level-greenyellow': color.level_color! >= 50 && color.level_color! < 65,
-                                        'color__level-orange': color.level_color! < 50 && color.level_color! >= 35,
-                                        'color__level-orangered': color.level_color! < 35 && color.level_color! >= 20,
-                                        'color__level-red': color.level_color! < 20
-                                        }">
-                    </div>
-                </div>
-            </li>
-        </ul>
-    </div>
+            </div>
+        </li>
+    </ul>
 </div>
