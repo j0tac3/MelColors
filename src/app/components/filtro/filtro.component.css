@@ -1,6 +1,6 @@
 .container{
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     position: fixed;
     top: 30%;
     /* padding: 1rem; */
@@ -21,8 +21,8 @@
     width: 10rem;
     background-color: #ffff;
     padding: 1rem;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
+    /* border-top-right-radius: 10px; */
+    border-bottom-right-radius: 10px;
     box-shadow: 0px 0px 10px 0px #7777;
 }
 .title{
@@ -43,7 +43,7 @@
 .btn__expanded{
     background-color: #fff;
     padding: 1rem .2rem;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
     box-shadow: 5px 0px 10px -5px #777;
 }
