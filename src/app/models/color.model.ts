@@ -1,4 +1,6 @@
 export class Color{
+    public marca? : string;
+    public categoria? : string;
     public number? : string;
     public description_en? : string;
     public description_es? : string;
@@ -8,6 +10,8 @@ export class Color{
     public itHasColor? : boolean;
 
     constructor( object : any ){
+        this.marca = ( object.marca ) ? object.marca : null;
+        this.categoria = ( object.categoria ) ? object.categoria : null;
         this.number = ( object.number ) ? object.number : null;
         this.description_en = ( object.description_en ) ? object.description_en : null;
         this.description_es = ( object.description_es ) ? object.description_es : null;

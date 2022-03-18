@@ -10,6 +10,7 @@ import { ColorCardComponent } from './components/color-card/color-card.component
 import { HeaderComponent } from './components/header/header.component';
 import { BuscadorComponent } from './components/buscador/buscador.component';
 import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FiltroComponent } from './components/filtro/filtro.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
     ColorListComponent,
     ColorCardComponent,
     HeaderComponent,
-    BuscadorComponent
+    BuscadorComponent,
+    FiltroComponent
   ],
   imports: [
     BrowserModule,

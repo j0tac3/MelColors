@@ -1,0 +1,54 @@
+<div class="container">
+    <form action="">
+        <div class="control">
+            <h3 class="title">Marca</h3>
+            <div class="options">
+                <div class="option">
+                    <input  type="radio" name="marca" 
+                            id="" 
+                            [value]="marca" 
+                            checked
+                            (click)="onChangeMarca(1)">
+                    <label for="">Vallejo</label>
+                </div>
+                <div class="option">
+                    <input  type="radio"
+                            name="marca" 
+                            id="" 
+                            [value]="marca"
+                            (click)="onChangeMarca(2)">
+                    <label for="">Citadel</label>
+                </div>
+                <div class="option">
+                    <input  type="radio"
+                            name="marca" 
+                            id="" 
+                            [value]="marca"
+                            (click)="onChangeMarca(3)">
+                    <label for="">Army Painter</label>
+                </div>
+            </div>
+        </div>
+        <div class="control" [hidden]="marca !== 1">
+            <h3 class="title">Cateforia</h3>
+            <div class="options">
+                <div class="option">
+                    <input type="checkbox" name="" id="" checked>
+                    <label for="">Model Color</label>
+                </div>
+                <div class="option">
+                    <input type="checkbox" name="" id="">
+                    <label for="">Game Color</label>
+                </div>
+                <div class="option">
+                    <input type="checkbox" name="" id="">
+                    <label for="">Game Air</label>
+                </div>
+                <div class="option">
+                    <input type="checkbox" name="" id="">
+                    <label for="">Model Air</label>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
