@@ -1,54 +1,47 @@
-<div class="container">
-    <form action="">
+<div    class="container"
+        [ngClass]="{'filtro__hidden':!expanded}">
+    <form [formGroup]="filtro"
+            class="filtro__form">
         <div class="control">
             <h3 class="title">Marca</h3>
             <div class="options">
-                <div class="option">
-                    <input  type="radio" name="marca" 
-                            id="" 
-                            [value]="marca" 
-                            checked
-                            (click)="onChangeMarca(1)">
-                    <label for="">Vallejo</label>
-                </div>
-                <div class="option">
+                <div    class="option"
+                        *ngFor="let marca of marcas">
                     <input  type="radio"
-                            name="marca" 
                             id="" 
-                            [value]="marca"
-                            (click)="onChangeMarca(2)">
-                    <label for="">Citadel</label>
-                </div>
-                <div class="option">
-                    <input  type="radio"
-                            name="marca" 
-                            id="" 
-                            [value]="marca"
-                            (click)="onChangeMarca(3)">
-                    <label for="">Army Painter</label>
+                            [value]="marca.id"
+                            formControlName="marca"
+                            (change)="onChangeMarca(marca.id)">
+                    <label for="">{{marca.desc}}</label>
                 </div>
             </div>
         </div>
-        <div class="control" [hidden]="marca !== 1">
+        <div class="control" [hidden]="filtro.get('marca')?.value !== 1">
             <h3 class="title">Cateforia</h3>
             <div class="options">
-                <div class="option">
-                    <input type="checkbox" name="" id="" checked>
-                    <label for="">Model Color</label>
-                </div>
-                <div class="option">
-                    <input type="checkbox" name="" id="">
-                    <label for="">Game Color</label>
-                </div>
-                <div class="option">
-                    <input type="checkbox" name="" id="">
-                    <label for="">Game Air</label>
-                </div>
-                <div class="option">
-                    <input type="checkbox" name="" id="">
-                    <label for="">Model Air</label>
+                <div    class="option" 
+                        *ngFor="let categoria of categorias">
+                    <input  type="radio" 
+                            id=""
+                            [value]="categoria.id"
+                            [checked]="categoria.id == 0"
+                            formControlName="categoria"
+                            (change)="onChangeCategoria(categoria.id)">
+                    <label for="">{{categoria.desc}}</label>
                 </div>
             </div>
         </div>
+        <button type="button" class="btn__limpiar" (click)="clearFilter()">Limpiar filtro</button>
     </form>
+    <div class="expand__container">
+        <img    src="assets/media/icons/to_rigth.svg" 
+                alt="" 
+                class="btn__expanded" 
+                [hidden]="expanded"  
+                (click)="onExpand(true)">
+        <img    src="assets/media/icons/to_left.svg"
+                alt="" class="btn__expanded" 
+                [hidden]="!expanded" 
+                (click)="onExpand(false)">
+    </div>
 </div>

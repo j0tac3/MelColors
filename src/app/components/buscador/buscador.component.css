@@ -1,4 +1,6 @@
 .buscador{
+    position: sticky;
+    top: 1rem;
     margin: 1rem auto;
     width: 10rem;
     display: flex;
@@ -16,6 +18,7 @@
 .buscador__icon{
     width: 3rem;
     border: 1px solid #7777;
+    background-color:#ffff;
     padding: .3rem;
     box-sizing: border-box;
     border-top-right-radius: 10px;
