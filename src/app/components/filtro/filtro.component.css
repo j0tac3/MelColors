@@ -47,7 +47,7 @@
     overflow: hidden;
 }
 .btn_expanded_animation{
-    animation: filtroButtonAnimation;
+    /* animation: filtroButtonAnimation; */
     animation-duration: 1.5s;
     animation-delay: 1s;
     animation-timing-function: .5s;
@@ -57,22 +57,18 @@
 
 @keyframes filtroButtonAnimation {
     0%{
+        transform: translateX(3px);
+    }
+    25%{
         transform: translateX(0);
     }
     50%{
-        transform: translateX(100%);
-    }
-    60%{
-        transform: translateY(500%);
-       
-    }
-    70%{
-        transform: translateX(-100%);
-    }
-    80%{
         transform: translateX(3px);
     }
-    90%{
-        transform: translateX(-3px);
+    75%{
+        transform: translateX(0);
+    }
+    95%{
+        transform: translateX(3px);
     }
 }
