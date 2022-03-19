@@ -13,11 +13,13 @@
 .filtro__form{
     width: 10rem;
     background-color: #ffff;
-    padding: 1rem;
     /* border-top-right-radius: 10px; */
-    box-shadow: 0px 0px 10px 0px #7777;
+    box-shadow: 5px 0px 10px 0px #7777;
     border-radius: 10px;
     border-top-left-radius: 0;
+}
+.control{
+    padding: .5rem 1rem;
 }
 .title{
     padding: 0;
@@ -33,6 +35,8 @@
     border: none;
     color: #ffff;
     padding: .5rem;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 .btn__expanded{
     background-color: #fff;
