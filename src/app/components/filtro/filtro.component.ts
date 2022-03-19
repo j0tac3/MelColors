@@ -15,7 +15,6 @@ export class FiltroComponent implements OnInit {
     {'id':3,'desc':'Army Painter'}
   ];
   public categorias = [
-    {'id':0,'desc':'Todos'},
     {'id':1,'desc':'Model Color'},
     {'id':2,'desc':'Model Air'},
     {'id':3,'desc':'Game Color'},
