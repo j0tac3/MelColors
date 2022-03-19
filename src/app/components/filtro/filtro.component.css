@@ -6,12 +6,16 @@
     right: .5rem;
     color: #1f1f1f;
     transition: transform .3s;
+
+    width: 100%;
+    min-width: 10rem;
+    max-width: 15rem;
 }
 .filtro__hidden{
     transform: translateX(90%);
 }
 .filtro__form{
-    width: 10rem;
+    width: 100%;
     background-color: #ffff;
     /* border-top-right-radius: 10px; */
     box-shadow: 5px 0px 10px 0px #7777;
