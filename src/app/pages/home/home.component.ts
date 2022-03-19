@@ -51,4 +51,10 @@ export class HomeComponent implements OnInit {
     })
   }
 
+  filterItemsByFilter( filter : any ){
+    this.colorToSee = this.colors.filter(function(color) {
+      return (color.marca! == filter.marca);
+    })
+  }
+
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -7,6 +7,8 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
   styleUrls: ['./filtro.component.css']
 })
 export class FiltroComponent implements OnInit {
+  @Output() onFiltered = new EventEmitter<object>();
+
   public marcas = [
     {'id':1,'desc':'Vallejo'},
     {'id':2,'desc':'Citadel'},
@@ -42,10 +44,12 @@ export class FiltroComponent implements OnInit {
 
   onChangeMarca(marca : number){
     this.currentMarca = marca;
+    this.onFiltered.emit({marca:this.currentMarca, categoria:this.currentCategoria});
   }
 
   onChangeCategoria(categoria : number){
     this.currentCategoria = categoria;
+    this.onFiltered.emit({marca:this.currentMarca, categoria:this.currentCategoria});
   }
 
   clearFilter(){
