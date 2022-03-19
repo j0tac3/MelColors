@@ -54,6 +54,7 @@ export class FiltroComponent implements OnInit {
   clearFilter(){
     this.filtro.get('marca')?.reset(this.marcas[0].id);
     this.filtro.get('categoria')?.reset(this.categorias[0].id);
+    this.expanded = false;
   }
 
   onExpand(expand : boolean){
