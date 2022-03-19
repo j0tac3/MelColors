@@ -1,8 +1,7 @@
 .buscador{
     position: sticky;
-    top: 1rem;
+    top: 2rem;
     margin: 1rem auto;
-    width: 14rem;
     display: flex;
     justify-content: center;
 }
@@ -11,6 +10,9 @@
     justify-content: center;
     box-shadow: 0px 5px 15px -5px #777;
     border-radius: 10px;
+    min-width: 14rem;
+    max-width: 25rem;
+    height: 2.2rem;
 }
 .buscador__input{
     border: 1px solid #7777;

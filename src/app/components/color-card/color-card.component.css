@@ -2,10 +2,9 @@
     width: 100%;
     display: grid;
     margin-bottom: .5rem;
+    padding-left: 1rem;
     align-items: center;
     box-sizing: border-box;
-
-    background-color: #ffff;
 
     transition: transform .2s;
 }
