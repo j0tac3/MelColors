@@ -1,5 +1,19 @@
 <div    class="container"
         [ngClass]="{'filtro__hidden':!expanded}">
+    <div class="expand__container">
+        <div    class="btn__expanded"
+                [hidden]="!expanded" >
+            <img    src="assets/media/icons/to_rigth.svg" 
+                    alt="" 
+                    class="" 
+                    [ngClass]="{'btn_expanded_animation':expanded}"
+                    (click)="onExpand(false)">
+        </div>
+        <img    src="assets/media/icons/to_left.svg"
+                alt="" class="btn__expanded" 
+                [hidden]="expanded"
+                (click)="onExpand(true)">
+    </div>
     <form [formGroup]="filtro"
             class="filtro__form">
         <div class="control">
@@ -33,15 +47,4 @@
         </div>
         <button type="button" class="btn__limpiar" (click)="clearFilter()">Limpiar filtro</button>
     </form>
-    <div class="expand__container">
-        <img    src="assets/media/icons/to_rigth.svg" 
-                alt="" 
-                class="btn__expanded" 
-                [hidden]="!expanded"  
-                (click)="onExpand(false)">
-        <img    src="assets/media/icons/to_left.svg"
-                alt="" class="btn__expanded" 
-                [hidden]="expanded" 
-                (click)="onExpand(true)">
-    </div>
 </div>
