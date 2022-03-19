@@ -37,11 +37,11 @@
         <img    src="assets/media/icons/to_rigth.svg" 
                 alt="" 
                 class="btn__expanded" 
-                [hidden]="expanded"  
-                (click)="onExpand(true)">
+                [hidden]="!expanded"  
+                (click)="onExpand(false)">
         <img    src="assets/media/icons/to_left.svg"
                 alt="" class="btn__expanded" 
-                [hidden]="!expanded" 
-                (click)="onExpand(false)">
+                [hidden]="expanded" 
+                (click)="onExpand(true)">
     </div>
 </div>

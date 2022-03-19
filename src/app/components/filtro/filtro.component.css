@@ -1,9 +1,10 @@
 .container{
     display: flex;
+    flex-flow: row-reverse;
     /* align-items: center; */
     position: fixed;
     top: 50%;
-    left: 1rem;
+    right: .5rem;
     /* padding: 1rem; */
     /* border: 1px solid #7777;
     border-left: none;
@@ -16,7 +17,7 @@
     transition: transform .3s;
 }
 .filtro__hidden{
-    transform: translateX(-95%);
+    transform: translateX(90%);
 }
 .filtro__form{
     width: 10rem;
@@ -24,9 +25,8 @@
     padding: 1rem;
     /* border-top-right-radius: 10px; */
     box-shadow: 0px 0px 10px 0px #7777;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+    border-radius: 10px;
+    border-top-left-radius: 0;
 }
 .title{
     padding: 0;
@@ -46,7 +46,7 @@
 .btn__expanded{
     background-color: #fff;
     padding: 1rem .2rem;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-    box-shadow: 5px 0px 10px -5px #777;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    box-shadow: -5px 0px 10px -5px #777;
 }
