@@ -1,9 +1,9 @@
 <div class="buscador">
-    <form action="" [formGroup]="buscador">
+    <form action="" [formGroup]="buscador" class="form">
         <input type="text" class="buscador__input"
                 formControlName="text"
                 (keyup)="onTextToSearch()">
-    </form>
-    <img src="assets/media/icons/search.svg" alt=""
+        <img src="assets/media/icons/search.svg" alt=""
             class="buscador__icon">
+    </form>
 </div>
