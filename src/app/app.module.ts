@@ -11,6 +11,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { BuscadorComponent } from './components/buscador/buscador.component';
 import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FiltroComponent } from './components/filtro/filtro.component';
+import { AdministrarComponent } from './pages/administrar/administrar.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,12 +22,14 @@ import { FiltroComponent } from './components/filtro/filtro.component';
     ColorCardComponent,
     HeaderComponent,
     BuscadorComponent,
-    FiltroComponent
+    FiltroComponent,
+    AdministrarComponent
   ],
   imports: [
     BrowserModule,
     APP_ROUTING,
     ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

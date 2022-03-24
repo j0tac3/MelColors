@@ -20,13 +20,13 @@
             <h3 class="title">Marca</h3>
             <div class="options">
                 <div    class="option"
-                        *ngFor="let marca of marcas">
+                        *ngFor="let company of companies">
                     <input  type="radio"
                             id="" 
-                            [value]="marca.id"
+                            [value]="company.id"
                             formControlName="marca"
-                            (change)="onChangeMarca(marca.id)">
-                    <label for="">{{marca.desc}}</label>
+                            (change)="onChangeMarca(company.id!)">
+                    <label for="">{{company.short_desc}}</label>
                 </div>
             </div>
         </div>
@@ -34,14 +34,14 @@
             <h3 class="title">Cateforia</h3>
             <div class="options">
                 <div    class="option" 
-                        *ngFor="let categoria of categorias">
+                        *ngFor="let category of categories">
                     <input  type="radio" 
                             id=""
-                            [value]="categoria.id"
-                            [checked]="categoria.id == 0"
+                            [value]="category.id"
+                            [checked]="category.id == 0"
                             formControlName="categoria"
-                            (change)="onChangeCategoria(categoria.id)">
-                    <label for="">{{categoria.desc}}</label>
+                            (change)="onChangeCategoria(category.id!)">
+                    <label for="">{{category.short_desc}}</label>
                 </div>
             </div>
         </div>
