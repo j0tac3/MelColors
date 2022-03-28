@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Color } from 'src/app/models/color.model';
+import { ColorObject } from 'src/app/models/colorobject.model';
+import { ColorService } from 'src/app/service/color.service';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +9,8 @@ import { Color } from 'src/app/models/color.model';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  private colorsData! : ColorObject[];
+
   private colors = [
     new Color(new Object({marca:1,categoria:1,number:'70.951',description_en:'White',description_es:'Blanco', color:'#ffffff', level_color:0, isFavourite:false, itHasColor:false})),
     new Color(new Object({marca:1,categoria:1,number:'70.919',description_en:'Cold White',description_es:'Blanco Frio',color:'#ffffff', level_color:0, isFavourite:false, itHasColor:false})),
@@ -29,10 +33,18 @@ export class HomeComponent implements OnInit {
 
   public colorToSee! : Color[];
 
-  constructor() { }
+  constructor( private colorService : ColorService ) { }
 
   ngOnInit(): void {
     this.colorToSee = this.colors;
+    //this.getColors();
+  }
+
+  getColors(){
+    this.colorService.getColor()
+    .subscribe( resp => {
+      this.colorsData = resp.data;
+    });
   }
 
   onTextToSearch(text : any){
@@ -52,7 +64,6 @@ export class HomeComponent implements OnInit {
   }
 
   filterItemsByFilter( filter : any ){
-    console.log(filter);
     this.colorToSee = this.colors.filter(function(color) {
       return (color.marca! == filter.marca) && (color.categoria! == filter.categoria);
     })

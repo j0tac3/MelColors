@@ -1,0 +1,58 @@
+<div class="container">
+    <form [formGroup]="newColor">
+        <div class="control">
+            <label  for=""
+                    class="label">Código</label>
+            <input  type="text"
+                    class="input__text"
+                    formControlName="code">
+        </div>
+        <div class="control">
+            <label  for=""
+                    class="label">Descripción (español):</label>
+            <input  type="text"
+                    class="input__text"
+                    formControlName="desc_esp">
+        </div>
+        <div class="control">
+            <label  for=""
+                    class="label">Descripción (ingles):</label>
+            <input  type="text"
+                    class="input__text"
+                    formControlName="desc_eng">
+        </div>
+        <div class="control">
+            <label  for=""
+                    class="label">Color (Hex.)</label>
+            <input  type="text"
+                    class="input__text"
+                    formControlName="hex">
+        </div>
+        <div class="control">
+            <label  for=""
+                    class="label">Marca</label>
+            <select formControlName="company">
+                <option value="company.id"
+                        *ngFor="let company of companies">
+                    {{ company.short_desc }}
+                </option>
+            </select>
+        </div>
+        <div class="control">
+            <label  for=""
+                    class="label">Categoria</label>
+            <select formControlName="category">
+                <option value="company.id"
+                        *ngFor="let category of categories">
+                    {{ category.short_desc }}
+                </option>
+            </select>
+        </div>
+        <div class="buttons">
+            <button class="btn btn__accept"
+                    type="button">Aceptar</button>
+            <button class="btn btn__cancel"
+                    type="button">Cancelar</button>
+        </div>
+    </form>
+</div>

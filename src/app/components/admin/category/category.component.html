@@ -1,0 +1,16 @@
+<div class="container">
+    <table class="table">
+        <thead>
+            <th class="id_column">ID</th>
+            <th>Descripcion</th>
+            <th>Descr. Corta</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let category of categories">
+                <td class="id_column">{{ category.id }}</td>
+                <td>{{ category.desc }}</td>
+                <td>{{ category.short_desc }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

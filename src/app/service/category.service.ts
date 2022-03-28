@@ -8,10 +8,11 @@ import { Category } from '../models/category.model';
 })
 export class CategoryService {
   private url = 'http://127.0.0.1:8000/api/category';
+  private url_prod = 'https://melcolorsapi.herokuapp.com/api/category';
 
   constructor( private http : HttpClient) { }
 
   getCategories() : Observable<any> {
-    return this.http.get<any>(this.url);
+    return this.http.get<any>(this.url_prod);
   }
 }

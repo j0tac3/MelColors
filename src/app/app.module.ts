@@ -13,6 +13,12 @@ import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FiltroComponent } from './components/filtro/filtro.component';
 import { AdministrarComponent } from './pages/administrar/administrar.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CompanyComponent } from './components/admin/company/company.component';
+import { CategoryComponent } from './components/admin/category/category.component';
+import { ColorComponent } from './components/admin/color/color.component';
+import { UserComponent } from './components/admin/user/user.component';
+import { MenuAdminComponent } from './components/admin/menu-admin/menu-admin.component';
+import { ModalAddEditColorComponent } from './components/admin/color/modal-add-edit-color/modal-add-edit-color.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +29,13 @@ import { HttpClientModule } from '@angular/common/http';
     HeaderComponent,
     BuscadorComponent,
     FiltroComponent,
-    AdministrarComponent
+    AdministrarComponent,
+    CompanyComponent,
+    CategoryComponent,
+    ColorComponent,
+    UserComponent,
+    MenuAdminComponent,
+    ModalAddEditColorComponent
   ],
   imports: [
     BrowserModule,

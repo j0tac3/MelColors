@@ -1,0 +1,16 @@
+<div class="container">
+    <table class="table">
+        <thead>
+            <th class="id_column">ID</th>
+            <th>Descripcion</th>
+            <th>Descr. Corta</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let company of companies">
+                <td class="id_column">{{ company.id }}</td>
+                <td>{{ company.desc }}</td>
+                <td>{{ company.short_desc }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

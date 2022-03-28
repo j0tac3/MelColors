@@ -1,0 +1,35 @@
+.admin__menu{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.admin__item{
+    display: grid;
+    justify-items: center;
+}
+.btn{
+    border: none;
+    background-color: transparent;
+    display: grid;
+    grid-gap: .5rem;
+    justify-items: center;
+    color: #777;
+    transition: color .2s;
+    font-size: .8rem;
+}
+.btn:hover{
+    cursor: pointer;
+    color: black;
+}
+.btn:hover .icon{
+    filter: invert(0);
+}
+.icon{
+    width: 2rem;
+    filter: invert(.5);
+    transition: filter .2s;
+}

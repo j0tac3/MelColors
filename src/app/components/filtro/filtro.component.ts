@@ -57,14 +57,12 @@ export class FiltroComponent implements OnInit {
     this.companySercice.getCompanies()
     .subscribe( resp => {
       this.companies = resp.data;
-      console.log(resp.data);
     })
   }
   getCategories(){
     this.categoryService.getCategories()
     .subscribe( resp => {
       this.categories = resp.data;
-      console.log(resp.data);
     })
   }
 

@@ -1,0 +1,17 @@
+.container{
+    width: 100%;
+    display: grid;
+    justify-items: center;
+}
+.table{
+    margin: 1rem 0;
+    width: 100%;
+    max-width: 30rem;
+}
+.id_column{
+    width: 3rem;
+    text-align: center;
+}
+tr:nth-child(odd){
+    background-color: lightblue;
+}

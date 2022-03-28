@@ -1,0 +1,47 @@
+.control{
+    display: grid;
+    grid-gap: .5rem;
+    margin: 1rem 0;
+}
+.label{
+    color: #777;
+}
+.input__text{
+    border: none;
+    border-bottom: 1px solid #7777;
+    outline: #777;
+    color: #777;
+}
+.buttons{
+    margin: 1rem 0;
+    display: grid;
+    grid-gap: .7rem;
+}
+.btn{
+    border: none;
+    background-color: transparent   ;
+    padding: .6rem 1rem;
+    border-radius: 3px;
+    font-weight: bold;
+    transition: background-color .4s, color .3s, transform .3s;
+}
+.btn__accept{
+    background-color: dodgerblue;
+    color: #fff;
+}
+.btn__accept:hover, .btn__cancel:hover{
+    cursor: pointer;
+    /* transform: translateY(-2px); */
+}
+.btn__accept:hover{
+    background-color: mediumslateblue;
+}
+.btn__cancel{
+    border: 1px solid #7777;
+    color: #7777;
+}
+.btn__cancel:hover{
+    cursor: pointer;
+    background-color: #7777;
+    color: #fff;
+}
