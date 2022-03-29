@@ -1,4 +1,5 @@
 <div class="container">
+    <h2 class="title">Nuevo Color</h2>
     <form [formGroup]="newColor">
         <div class="control">
             <label  for=""
@@ -53,7 +54,8 @@
                     type="button"
                     (click)="onSaveColor()">Aceptar</button>
             <button class="btn btn__cancel"
-                    type="button">Cancelar</button>
+                    type="button"
+                    (click)="onCloseModal()">Cancelar</button>
         </div>
     </form>
 </div>

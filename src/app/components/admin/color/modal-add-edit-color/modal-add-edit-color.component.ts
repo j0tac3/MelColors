@@ -14,7 +14,7 @@ import { CompanyService } from 'src/app/service/company.service';
   styleUrls: ['./modal-add-edit-color.component.css']
 })
 export class ModalAddEditColorComponent implements OnInit {
-  @Output() closeModal = new EventEmitter<boolean>();
+  @Output() closeModal = new EventEmitter();
   @Output() addColor = new EventEmitter<ColorObject>();
 
   public companies! : Company[];
@@ -64,6 +64,10 @@ export class ModalAddEditColorComponent implements OnInit {
       console.log(resp);
       this.addColor.emit(resp);
     })
+  }
+
+  onCloseModal(){
+    this.closeModal.emit();
   }
 
 }

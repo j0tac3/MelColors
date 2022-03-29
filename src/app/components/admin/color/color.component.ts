@@ -9,6 +9,7 @@ import { ColorService } from 'src/app/service/color.service';
 })
 export class ColorComponent implements OnInit {
   public colors! : ColorObject[];
+  public openModal = false;
 
   constructor( private colorService : ColorService ) { }
   
@@ -25,5 +26,13 @@ export class ColorComponent implements OnInit {
 
   onAddColor(color : ColorObject){
     this.colors.push(color);
+  }
+
+  onOpenModal(){
+    this.openModal = true;
+  }
+
+  onCloseModal(){
+    this.openModal = false;
   }
 }
