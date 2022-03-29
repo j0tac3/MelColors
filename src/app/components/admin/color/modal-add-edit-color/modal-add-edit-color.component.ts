@@ -15,6 +15,7 @@ import { CompanyService } from 'src/app/service/company.service';
 })
 export class ModalAddEditColorComponent implements OnInit {
   @Output() closeModal = new EventEmitter<boolean>();
+  @Output() addColor = new EventEmitter<ColorObject>();
 
   public companies! : Company[];
   public categories! : Category[];
@@ -34,11 +35,11 @@ export class ModalAddEditColorComponent implements OnInit {
   onInitForm(){
     this.newColor = this.fb.group({
       code : new FormControl('', Validators.required),
-      desc_esp : new FormControl('', Validators.required),
-      desc_eng : new FormControl('', Validators.required),
-      company : new FormControl('', Validators.required),
-      category : new FormControl('', Validators.required),
-      hex : new FormControl()
+      desc_es : new FormControl('', Validators.required),
+      desc_en : new FormControl('', Validators.required),
+      company_id : new FormControl('', Validators.required),
+      category_id : new FormControl('', Validators.required),
+      hex_code : new FormControl()
     });
   }
 
@@ -61,6 +62,7 @@ export class ModalAddEditColorComponent implements OnInit {
     this.colorService.addColort(color)
     .subscribe(resp => {
       console.log(resp);
+      this.addColor.emit(resp);
     })
   }
 

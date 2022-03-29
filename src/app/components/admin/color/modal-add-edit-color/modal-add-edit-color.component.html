@@ -12,27 +12,27 @@
                     class="label">Descripción (español):</label>
             <input  type="text"
                     class="input__text"
-                    formControlName="desc_esp">
+                    formControlName="desc_es">
         </div>
         <div class="control">
             <label  for=""
                     class="label">Descripción (ingles):</label>
             <input  type="text"
                     class="input__text"
-                    formControlName="desc_eng">
+                    formControlName="desc_en">
         </div>
         <div class="control">
             <label  for=""
                     class="label">Color (Hex.)</label>
             <input  type="text"
                     class="input__text"
-                    formControlName="hex">
+                    formControlName="hex_code">
         </div>
         <div class="control">
             <label  for=""
                     class="label">Marca</label>
-            <select formControlName="company">
-                <option value="company.id"
+            <select formControlName="company_id">
+                <option [value]="company.id"
                         *ngFor="let company of companies">
                     {{ company.short_desc }}
                 </option>
@@ -41,16 +41,17 @@
         <div class="control">
             <label  for=""
                     class="label">Categoria</label>
-            <select formControlName="category">
-                <option value="company.id"
-                        *ngFor="let category of categories">
+            <select formControlName="category_id">
+                <option *ngFor="let category of categories"
+                        [value]="category.id">
                     {{ category.short_desc }}
                 </option>
             </select>
         </div>
         <div class="buttons">
             <button class="btn btn__accept"
-                    type="button">Aceptar</button>
+                    type="button"
+                    (click)="onSaveColor()">Aceptar</button>
             <button class="btn btn__cancel"
                     type="button">Cancelar</button>
         </div>

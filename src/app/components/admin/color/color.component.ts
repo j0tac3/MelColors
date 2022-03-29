@@ -22,4 +22,8 @@ export class ColorComponent implements OnInit {
       this.colors = resp.data;
     });
   }
+
+  onAddColor(color : ColorObject){
+    this.colors.push(color);
+  }
 }
