@@ -9,7 +9,8 @@ import { CompanyService } from 'src/app/service/company.service';
 })
 export class CompanyComponent implements OnInit {
   public companies! : Company[];
-  public openModal = true;
+  public openModal = false;
+  public currentCompany! : Company;
 
   constructor( private companyService : CompanyService ) { }
   
@@ -26,6 +27,28 @@ export class CompanyComponent implements OnInit {
 
   onAddCompany(company : Company){
     this.companies.push(company);
+    this.openModal = false;
+  }
+
+  onUpdateCompany(companyToUpdate : Company){
+    for(let company of this.companies){
+      if(company.id == companyToUpdate.id){
+        company = companyToUpdate;
+      }
+    }
+  }
+
+  onDeleteCompany(company : Company){
+    this.companyService.deleteCompany(company)
+    .subscribe(resp => {
+      console.log(resp);
+      this.companies = this.companies.filter(comp => company.id !== comp.id);
+    })
+  }
+
+  onEditCompany(company : Company){
+    this.currentCompany = company;
+    this.openModal = true;
   }
 
   onOpenModal(){
@@ -34,6 +57,7 @@ export class CompanyComponent implements OnInit {
 
   onCloseModal(){
     this.openModal = false;
+    this.currentCompany = {};
   }
 
 }

@@ -1,6 +1,8 @@
 <div class="container">
     <app-modal-add-edit-company (addCompany)="onAddCompany($event)"
+                                (updateCompany)="onUpdateCompany($event)"
                                 (closeModal)="onCloseModal()"
+                                [currentCompany]="currentCompany"
                                 *ngIf="openModal">
     </app-modal-add-edit-company>
     <button type="button"
@@ -8,13 +10,31 @@
             class="btn__addColor">Nuevo</button>
     <table class="table">
         <thead>
-            <th class="id_column">ID</th>
+            <!-- <th class="id_column">ID</th> -->
+            <th>Acciones
+            </th>
             <th>Descripcion</th>
             <th>Descr. Corta</th>
         </thead>
         <tbody>
             <tr *ngFor="let company of companies">
-                <td class="id_column">{{ company.id }}</td>
+                <!-- <td class="id_column">{{ company.id }}</td> -->
+                <td>
+                    <ul class="actions">
+                        <li class="actions__item"
+                            (click)="onEditCompany(company)">
+                            <img    src="assets/media/icons/edit.png" 
+                                    alt=""
+                                    class="action__icon">
+                        </li>
+                        <li class="actions__item"
+                            (click)="onDeleteCompany(company)">
+                            <img    src="assets/media/icons/delete.png" 
+                                    alt=""
+                                    class="action__icon">
+                        </li>
+                    </ul>
+                </td>
                 <td>{{ company.desc }}</td>
                 <td>{{ company.short_desc }}</td>
             </tr>
