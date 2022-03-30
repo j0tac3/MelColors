@@ -44,7 +44,7 @@ export class ModalAddEditColorComponent implements OnInit {
   }
 
   onGetCompanies(){
-    this.companySercie.getCompanies()
+    this.companySercie.getCompany()
     .subscribe(resp => {
       this.companies = resp.data;
     })

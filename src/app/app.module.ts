@@ -19,6 +19,7 @@ import { ColorComponent } from './components/admin/color/color.component';
 import { UserComponent } from './components/admin/user/user.component';
 import { MenuAdminComponent } from './components/admin/menu-admin/menu-admin.component';
 import { ModalAddEditColorComponent } from './components/admin/color/modal-add-edit-color/modal-add-edit-color.component';
+import { ModalAddEditCompanyComponent } from './components/admin/company/modal-add-edit-company/modal-add-edit-company.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { ModalAddEditColorComponent } from './components/admin/color/modal-add-e
     ColorComponent,
     UserComponent,
     MenuAdminComponent,
-    ModalAddEditColorComponent
+    ModalAddEditColorComponent,
+    ModalAddEditCompanyComponent
   ],
   imports: [
     BrowserModule,

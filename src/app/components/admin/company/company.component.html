@@ -1,4 +1,11 @@
 <div class="container">
+    <app-modal-add-edit-company (addCompany)="onAddCompany($event)"
+                                (closeModal)="onCloseModal()"
+                                *ngIf="openModal">
+    </app-modal-add-edit-company>
+    <button type="button"
+            (click)="onOpenModal()"
+            class="btn__addColor">Nuevo</button>
     <table class="table">
         <thead>
             <th class="id_column">ID</th>

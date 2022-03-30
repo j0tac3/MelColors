@@ -12,20 +12,24 @@ export class CompanyService {
   
   constructor( private http : HttpClient) { }
 
-  getCompanies() : Observable<any> {
-    return this.http.get<any>(this.url_prod).pipe(
-			map(this.extractData),
-			catchError(this.handleErrorObservable)
-    )
-  }
+  
+  getCompany() : Observable<any> {
+    return this.http.get(this.url_prod);
+  };
 
-  private extractData(res: any) {
-    let body = res;
-    return body;
-  } 
+  addCompany(company: Company): Observable<any>{
+    const headers = { 'content-type' : 'application/json' };
+    const body = JSON.stringify(company);
+    return this.http.post<Company>(this.url_prod, body, {'headers': headers});
+  };
 
-  private handleErrorObservable(error: any) {
-    console.error(error.message || error);
-    return throwError(error);
-  } 
+  updateCompany(company: Company): Observable<any>{
+    const headers = { 'content-type' : 'application/json' };
+    const body = JSON.stringify(company);
+    return this.http.post<Company>(this.url_prod, body, {'headers': headers});
+  };
+
+  deleteCompany(company: Company): Observable<any>{
+    return this.http.delete(`${this.url_prod}/${company.id}`);
+  };
 }

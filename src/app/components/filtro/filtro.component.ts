@@ -54,7 +54,7 @@ export class FiltroComponent implements OnInit {
   }
 
   getCompanies(){
-    this.companySercice.getCompanies()
+    this.companySercice.getCompany()
     .subscribe( resp => {
       this.companies = resp.data;
     })

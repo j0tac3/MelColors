@@ -9,6 +9,7 @@ import { CompanyService } from 'src/app/service/company.service';
 })
 export class CompanyComponent implements OnInit {
   public companies! : Company[];
+  public openModal = true;
 
   constructor( private companyService : CompanyService ) { }
   
@@ -17,10 +18,22 @@ export class CompanyComponent implements OnInit {
   }
 
   getCompanies(){
-    this.companyService.getCompanies()
+    this.companyService.getCompany()
     .subscribe(resp => {
       this.companies = resp.data;
     });
+  }
+
+  onAddCompany(company : Company){
+    this.companies.push(company);
+  }
+
+  onOpenModal(){
+    this.openModal = true;
+  }
+
+  onCloseModal(){
+    this.openModal = false;
   }
 
 }
