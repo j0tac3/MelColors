@@ -1,6 +1,10 @@
 <div class="container">
-    <h2 class="title">Nuevo Color</h2>
-    <form [formGroup]="newColor">
+    <form   [formGroup]="newColor"
+            class="form">
+        <img src="assets/media/icons/close.png" alt=""
+            class="close__icon"
+            (click)="onCloseModal()">
+        <h2 class="title">Nuevo Color</h2>
         <div class="control">
             <label  for=""
                     class="label">Código</label>

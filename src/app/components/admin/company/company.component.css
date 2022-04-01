@@ -42,7 +42,7 @@ tr:nth-child(odd){
     align-items: center;
 }
 .action__icon{
-    width: 1.5rem;
+    width: 1.2rem;
 }
 .actions__item:hover{
     cursor: pointer;

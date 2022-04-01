@@ -1,19 +1,42 @@
 .container{
     position: fixed;
     left: 0;
+    top: 0;
     width: 100vw;
     height: 100vh;
     margin: 0 auto;
     z-index: 999;
     background: rgba(0, 0, 0, .7);
     display: flex;
-    /* justify-content: center; */
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
+}
+.form{
+    background-color: #fff;
+    width: 80%;
+    max-width: 20rem;
+    padding: 1rem;
+    position: relative;
+    border-radius: 5px;
+}
+.close__icon{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 1.5rem;
+    transition: transform .2s;
+    padding: .3rem;
+    border-radius: 5px;
+}
+.close__icon:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+    background-color: #7777;
+    box-shadow: 5px 5px 10px -5px #7777;
 }
 .title{
     margin-top: 2rem;
-    color: #fff;
+    color: #777;
 }
 .control{
     display: grid;
@@ -21,13 +44,13 @@
     margin: 1rem 0;
 }
 .label{
-    color: #ffff;
+    color: #777;
 }
 .input__text{
     border: none;
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid #777;
     outline: #777;
-    color: #fff;
+    color: #777;
     background-color: transparent;
 }
 .buttons{

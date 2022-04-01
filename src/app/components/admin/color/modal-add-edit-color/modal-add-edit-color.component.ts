@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Category } from 'src/app/models/category.model';
 import { Color } from 'src/app/models/color.model';
@@ -16,6 +16,7 @@ import { CompanyService } from 'src/app/service/company.service';
 export class ModalAddEditColorComponent implements OnInit {
   @Output() closeModal = new EventEmitter();
   @Output() addColor = new EventEmitter<ColorObject>();
+  @Input() currentColor! : ColorObject;
 
   public companies! : Company[];
   public categories! : Category[];
