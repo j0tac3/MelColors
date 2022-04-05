@@ -2,6 +2,7 @@
     width: 100%;
     box-sizing: border-box;
     position: relative;
+    overflow-x: hidden;
 }
 .quienes_somos{
     padding: 1rem;
