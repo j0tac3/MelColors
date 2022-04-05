@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Color } from 'src/app/models/color.model';
 import { ColorObject } from 'src/app/models/colorobject.model';
 import { ColorService } from 'src/app/service/color.service';
 
@@ -49,5 +48,6 @@ export class ColorComponent implements OnInit {
 
   onCloseModal(){
     this.openModal = false;
+    this.currentColor = {};
   }
 }

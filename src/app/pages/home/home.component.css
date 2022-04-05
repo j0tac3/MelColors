@@ -3,3 +3,10 @@
     box-sizing: border-box;
     position: relative;
 }
+.quienes_somos{
+    padding: 1rem;
+    color: #777;
+}
+.title{
+    color: #777;
+}

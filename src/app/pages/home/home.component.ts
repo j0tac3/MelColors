@@ -9,8 +9,9 @@ import { ColorService } from 'src/app/service/color.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  public isShearchig = false;
   private colorsData! : ColorObject[];
-
+  public colorToSee! : Color[];
   private colors = [
     new Color(new Object({marca:1,categoria:1,number:'70.951',description_en:'White',description_es:'Blanco', color:'#ffffff', level_color:0, isFavourite:false, itHasColor:false})),
     new Color(new Object({marca:1,categoria:1,number:'70.919',description_en:'Cold White',description_es:'Blanco Frio',color:'#ffffff', level_color:0, isFavourite:false, itHasColor:false})),
@@ -30,8 +31,6 @@ export class HomeComponent implements OnInit {
     new Color(new Object({marca:1,categoria:1,number:'70.948',description_en:'Golden Yellow',description_es:'Amarillo Dorado', color:'#f7b555', level_color:0, isFavourite:false, itHasColor:false})),
     new Color(new Object({marca:1,categoria:1,number:'70.815',description_en:'Basic Skin Tone',description_es:'Carne Base', color:'#f0ba9e', level_color:0, isFavourite:false, itHasColor:false})),
   ];
-
-  public colorToSee! : Color[];
 
   constructor( private colorService : ColorService ) { }
 
