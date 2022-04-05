@@ -3,7 +3,14 @@
         <input type="text" class="buscador__input"
                 formControlName="text"
                 (keyup)="onTextToSearch()">
-        <img src="assets/media/icons/search.svg" alt=""
-            class="buscador__icon">
+        <div class="icons">
+            <img    src="assets/media/icons/close.png" alt=""
+                    class="close__icon"
+                    [hidden]="!isSearching"
+                    (click)="onDeleteText()">
+            <img    src="assets/media/icons/search.svg" alt=""
+                    class="buscador__icon"
+                    [hidden]="isSearching">
+        </div>
     </form>
 </div>
