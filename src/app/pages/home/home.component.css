@@ -6,7 +6,21 @@
 .quienes_somos{
     padding: 1rem;
     color: #777;
+    transition: transform .3s;
+    position: absolute;
+    top: 2rem;
+    right: 0;
 }
 .title{
     color: #777;
+}
+.hidden_presentation{
+    transform: translateX(-100%);
+}
+.color_zone{
+    transition: transform .3s;
+    transform: translateX(100%);
+}
+.ShowColor{
+    transform: translate(0%);
 }

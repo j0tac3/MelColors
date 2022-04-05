@@ -9,7 +9,7 @@ import { ColorService } from 'src/app/service/color.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  public isShearchig = false;
+  public isShearching = false;
   private colorsData! : ColorObject[];
   public colorToSee! : Color[];
   private colors = [
@@ -49,8 +49,10 @@ export class HomeComponent implements OnInit {
   onTextToSearch(text : any){
     if (text !== ''){
       this.colorToSee = this.filterItems(text);
+      this.isShearching = true;
     } else {
       this.colorToSee = this.colors;
+      this.isShearching = false;
     }
   }
   
