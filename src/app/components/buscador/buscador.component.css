@@ -1,6 +1,6 @@
 .buscador{
     position: sticky;
-    top: 0;
+    top: 1.5rem;
     margin: 1rem auto;
     display: flex;
     justify-content: center;

@@ -22,6 +22,7 @@ export class ColorComponent implements OnInit {
     this.colorService.getColor()
     .subscribe(resp => {
       this.colors = resp.data;
+      this.colors.sort((a, b) => a.desc_es!.localeCompare(b.desc_es!))
     });
   }
 

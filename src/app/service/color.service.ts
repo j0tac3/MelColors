@@ -31,4 +31,5 @@ export class ColorService {
   deleteColor(color: ColorObject): Observable<any>{
     return this.http.delete(`${this.url_prod}/${color.id}`);
   };
+
 }
