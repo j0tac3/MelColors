@@ -11,8 +11,10 @@
     padding: 1rem;
     color: #777;
     transition: transform .3s;
-    top: 3rem;
+    position: absolute;
+    top: 0;
     right: 0;
+    transform: translateX(0);
 }
 .title{
     color: #777;
