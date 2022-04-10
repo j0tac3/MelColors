@@ -2,7 +2,8 @@
     width: 100%;
     box-sizing: border-box;
     position: relative;
-    overflow-x: hidden;
+    overflow: hidden;
+    min-height: 80vh;
 }
 .quienes_somos{
     padding: 1rem;
@@ -23,6 +24,5 @@
     transform: translateX(100%);
 }
 .ShowColor{
-    display: block;
     transform: translate(0%);
 }
