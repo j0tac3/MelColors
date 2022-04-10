@@ -31,22 +31,24 @@ export class ModalAddEditColorComponent implements OnInit {
     this.onInitForm();
     this.onGetCompanies();
     this.onGetCategories();
-    //this.onInitCurrentColor();
+    this.onInitCurrentColor();
   }
 
   onInitForm(){
     this.newColor = this.fb.group({
-      code : new FormControl(this.currentColor.code, Validators.required),
-      desc_es : new FormControl(this.currentColor.desc_es, Validators.required),
-      desc_en : new FormControl(this.currentColor.desc_en, Validators.required),
-      company_id : new FormControl(this.currentColor.company_id, Validators.required),
-      category_id : new FormControl(this.currentColor.category_id, Validators.required),
-      hex_code : new FormControl(this.currentColor.hex_code)
+      id : new FormControl(''),
+      code : new FormControl('', Validators.required),
+      desc_es : new FormControl('', Validators.required),
+      desc_en : new FormControl('', Validators.required),
+      company_id : new FormControl('', Validators.required),
+      category_id : new FormControl('', Validators.required),
+      hex_code : new FormControl('')
     });
   }
 
   onInitCurrentColor(){
     if (this.currentColor){
+      this.newColor.get('id')?.setValue(this.currentColor.id);
       this.newColor.get('code')?.setValue(this.currentColor.code);
       this.newColor.get('desc_es')?.setValue(this.currentColor.desc_es);
       this.newColor.get('desc_en')?.setValue(this.currentColor.desc_en);
@@ -72,22 +74,27 @@ export class ModalAddEditColorComponent implements OnInit {
 
   onSaveColor(){
     let color = new ColorObject(this.newColor.value);
-    this.currentColor.id ? this.onUpdateColor(color) : this.onCreateColor(color);
+ /*    if (color.id == null){
+      this.onCreateColor(color)
+    } else {
+      this.onUpdateColor(color)
+    } */
+    color.id !== null ? this.onUpdateColor(color) : this.onCreateColor(color);
   }
 
   onCreateColor(color : ColorObject){
-    this.colorService.updateColor(color)
+    this.colorService.addColort(color)
     .subscribe(resp => {
-      console.log(resp);
-      this.addColor.emit(resp);
+      color = resp;
+      this.addColor.emit(color);
     })
   }
 
   onUpdateColor(color : ColorObject){
-    this.colorService.addColort(color)
+    this.colorService.updateColor(color)
     .subscribe(resp => {
-      console.log(resp);
-      this.addColor.emit(resp);
+      color = resp;
+      this.addColor.emit(color);
     })
   }
 

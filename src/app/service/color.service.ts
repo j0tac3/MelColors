@@ -25,7 +25,7 @@ export class ColorService {
   updateColor(color: ColorObject): Observable<any>{
     const headers = { 'content-type' : 'application/json' };
     const body = JSON.stringify(color);
-    return this.http.post<ColorObject>(this.url_prod, body, {'headers': headers});
+    return this.http.put<ColorObject>(this.url_prod + '/' + color.id, body, {'headers': headers});
   };
 
   deleteColor(color: ColorObject): Observable<any>{

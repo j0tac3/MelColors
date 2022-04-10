@@ -2,8 +2,10 @@
     width: 100%;
     box-sizing: border-box;
     position: relative;
-    overflow: hidden;
-    min-height: 80vh;
+}
+.sections{
+    position: relative;
+    overflow-x: hidden;
 }
 .quienes_somos{
     padding: 1rem;

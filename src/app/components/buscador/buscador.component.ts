@@ -26,6 +26,7 @@ export class BuscadorComponent implements OnInit {
   onTextToSearch(){
     this.isSearching = true;
     let text = this.buscador.get('text')?.value;
+    if (text === '') { this.isSearching = false };
     this.textToSearch.emit(text);
   }
 

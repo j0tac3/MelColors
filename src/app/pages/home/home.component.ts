@@ -11,7 +11,7 @@ import { ColorService } from 'src/app/service/color.service';
 export class HomeComponent implements OnInit {
   public isSearching = false;
   private colorsData! : ColorObject[];
-  public colorToSee! : Color[];
+  public colorToSee! : ColorObject[];
   private colors = [
     new Color(new Object({marca:1,categoria:1,number:'70.951',description_en:'White',description_es:'Blanco', color:'#ffffff', level_color:0, isFavourite:false, itHasColor:false})),
     new Color(new Object({marca:1,categoria:1,number:'70.919',description_en:'Cold White',description_es:'Blanco Frio',color:'#ffffff', level_color:0, isFavourite:false, itHasColor:false})),
@@ -35,8 +35,9 @@ export class HomeComponent implements OnInit {
   constructor( private colorService : ColorService ) { }
 
   ngOnInit(): void {
-    this.colorToSee = this.colors;
-    //this.getColors();
+    this.getColors();
+    //this.colorToSee = this.colors;
+    this.colorToSee = this.colorsData;
   }
 
   getColors(){
@@ -51,25 +52,26 @@ export class HomeComponent implements OnInit {
       this.colorToSee = this.filterItems(text);
       this.isSearching = true;
     } else if(text === '*'){
-      this.colorToSee = this.colors;
+      this.colorToSee = this.colorsData;
       this.isSearching = true;
     } else {
-      this.colorToSee = this.colors;
+      this.colorToSee = this.colorsData;
       this.isSearching = false;
     }
   }
   
   filterItems(query : string) {
-    return this.colors.filter(function(color) {
-        return (color.number!.toLowerCase().indexOf(query.toLowerCase()) > -1) || 
-                (color.description_en!.toLowerCase().indexOf(query.toLowerCase()) > -1) ||
-                (color.description_es!.toLowerCase().indexOf(query.toLowerCase()) > -1);
+    return this.colorsData.filter(function(color) {
+        return (color.code!.toLowerCase().indexOf(query.toLowerCase()) > -1) || 
+                (color.desc_en!.toLowerCase().indexOf(query.toLowerCase()) > -1) ||
+                (color.desc_es!.toLowerCase().indexOf(query.toLowerCase()) > -1);
     })
   }
 
   filterItemsByFilter( filter : any ){
-    this.colorToSee = this.colors.filter(function(color) {
-      return (color.marca! == filter.marca) && (color.categoria! == filter.categoria);
+    //this.colorToSee = this.colors.filter(function(color) {
+    this.colorToSee = this.colorsData.filter(function(color) {
+      return (color.company_id! == filter.company_id) && (color.category_id! == filter.category_id);
     })
   }
 

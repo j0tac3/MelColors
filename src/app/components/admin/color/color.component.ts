@@ -26,7 +26,19 @@ export class ColorComponent implements OnInit {
   }
 
   onAddColor(color : ColorObject){
-    this.colors.push(color);
+    let colorFinded = this.colors.filter(colorCreated => {
+      colorCreated.id === color.id;
+    })
+    if (colorFinded.length < 0) {
+      this.colors.push(color);
+    } else {
+      this.onUpdateColor(color);
+    }
+    this.openModal = false;
+  }
+
+  onUpdateColor(color : ColorObject){
+
   }
 
   onEditColor(color : ColorObject){
@@ -37,7 +49,6 @@ export class ColorComponent implements OnInit {
   onDeleteColor(color : ColorObject){
     this.colorService.deleteColor(color)
     .subscribe(resp => {
-      console.log(resp);
       this.colors = this.colors.filter(comp => color.id !== comp.id);
     })
   }

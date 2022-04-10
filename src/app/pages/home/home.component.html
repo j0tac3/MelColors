@@ -1,18 +1,20 @@
 <div class="container">
     <app-buscador (textToSearch)="onTextToSearch($event)">
     </app-buscador>
-    <section    class="quienes_somos"
-                [ngClass]="{'hidden_presentation':isSearching}">
-        <h2 class="title">Qué es MelColors?</h2>
-        <p>MelColors es una plataforma cuyo objetivo es reunir información necesaria para cualquier apasionado a la pintura de miniaturas.</p>
-        <p>Aquí podreis consultar los diferentes colores de los principales fabricantes de material necesario para poder disfrutar de este maravilloso mundo.</p>
-        <p>Esperamos que sea de utilidad para cualquier persona que ingrese en nuestra plataforma.</p>
-        <p>Cualquier duda o sugerencia, podéis contactar con nosotros mediante los canales ofrecidos <a href="" class="contacto">aquí.</a></p>
-        <p>Os agradecemos y os enviamos un fuerte saludo.</p>
-    </section>
-    <section    class="color_zone"
-                [ngClass]="{'ShowColor':isSearching}">
-        <app-filtro (onFiltered)="filterItemsByFilter($event)"></app-filtro>
-        <app-color-list [colors]="colorToSee"></app-color-list>
-    </section>
+    <div class="sections">
+        <section    class="quienes_somos"
+                    [ngClass]="{'hidden_presentation':isSearching}">
+            <h2 class="title">Qué es MelColors?</h2>
+            <p>MelColors es una plataforma cuyo objetivo es reunir información necesaria para cualquier apasionado a la pintura de miniaturas.</p>
+            <p>Aquí podreis consultar los diferentes colores de los principales fabricantes de material necesario para poder disfrutar de este maravilloso mundo.</p>
+            <p>Esperamos que sea de utilidad para cualquier persona que ingrese en nuestra plataforma.</p>
+            <p>Cualquier duda o sugerencia, podéis contactar con nosotros mediante los canales ofrecidos <a href="" class="contacto">aquí.</a></p>
+            <p>Os agradecemos y os enviamos un fuerte saludo.</p>
+        </section>
+        <section    class="color_zone"
+                    [ngClass]="{'ShowColor':isSearching}">
+            <!-- <app-filtro (onFiltered)="filterItemsByFilter($event)"></app-filtro> -->
+            <app-color-list [colors]="colorToSee"></app-color-list>
+        </section>
+    </div>
 </div>

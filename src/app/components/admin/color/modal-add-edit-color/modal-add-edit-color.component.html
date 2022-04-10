@@ -6,6 +6,11 @@
             (click)="onCloseModal()">
         <h2 class="title">Nuevo Color</h2>
         <div class="control">
+            <input  type="hidden"
+                    class="input__text"
+                    formControlName="id">
+        </div>
+        <div class="control">
             <label  for=""
                     class="label">Código</label>
             <input  type="text"
