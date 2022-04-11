@@ -18,22 +18,10 @@
         </thead>
         <tbody>
             <tr *ngFor="let company of companies">
-                <!-- <td class="id_column">{{ company.id }}</td> -->
                 <td>
-                    <ul class="actions">
-                        <li class="actions__item"
-                            (click)="onEditCompany(company)">
-                            <img    src="assets/media/icons/edit.png" 
-                                    alt=""
-                                    class="action__icon">
-                        </li>
-                        <li class="actions__item"
-                            (click)="onDeleteCompany(company)">
-                            <img    src="assets/media/icons/delete.png" 
-                                    alt=""
-                                    class="action__icon">
-                        </li>
-                    </ul>
+                    <app-actions    (edit)="onEditCompany(company)"
+                                    (delete)="onDeleteCompany(company)">
+                    </app-actions>
                 </td>
                 <td>{{ company.desc }}</td>
                 <td>{{ company.short_desc }}</td>

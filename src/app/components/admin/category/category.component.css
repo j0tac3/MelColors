@@ -15,3 +15,10 @@
 tr:nth-child(odd){
     background-color: lightblue;
 }
+.btn__addColor{
+    margin-top: 1rem;
+    background-color: dodgerblue;
+    border: none;
+    color: #fff;
+    padding: .5rem 1rem;
+}

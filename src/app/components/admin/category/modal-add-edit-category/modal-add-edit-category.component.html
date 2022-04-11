@@ -1,0 +1,31 @@
+<div class="container">
+    <form [formGroup]="newCategory"
+        class="form">
+        <img src="assets/media/icons/close.png" alt=""
+                class="close__icon"
+                (click)="onCloseModal()">
+        <h2 class="title">Nueva Categoria</h2>
+        <div class="control">
+            <label  for=""
+                    class="label">Descripción</label>
+            <input  type="text"
+                    class="input__text"
+                    formControlName="desc">
+        </div>
+        <div class="control">
+            <label  for=""
+                    class="label">Descripción corta:</label>
+            <input  type="text"
+                    class="input__text"
+                    formControlName="short_desc">
+        </div>
+        <div class="buttons">
+            <button class="btn btn__accept"
+                    type="button"
+                    (click)="onSaveCcategory()">Aceptar</button>
+            <button class="btn btn__cancel"
+                    type="button"
+                    (click)="onCloseModal()">Cancelar</button>
+        </div>
+    </form>
+</div>

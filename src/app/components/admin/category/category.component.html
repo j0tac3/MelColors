@@ -1,4 +1,13 @@
 <div class="container">
+    <app-modal-add-edit-category (addCategory)="onAddCategory($event)"
+                                (updateCategory)="onUpdateCategory($event)"
+                                (closeModal)="onCloseModal()"
+                                [currentCategory]="currentCategory"
+                                *ngIf="openModal">
+    </app-modal-add-edit-category>
+    <button type="button"
+            (click)="onOpenModal()"
+            class="btn__addColor">Nuevo</button>
     <table class="table">
         <thead>
             <th class="id_column">ID</th>
@@ -7,7 +16,11 @@
         </thead>
         <tbody>
             <tr *ngFor="let category of categories">
-                <td class="id_column">{{ category.id }}</td>
+                <td class="id_column">
+                    <app-actions    (edit)="onUpdateCategory(category)"
+                                    (delete)="onDeleteCategory(category)">
+                    </app-actions>
+                </td>
                 <td>{{ category.desc }}</td>
                 <td>{{ category.short_desc }}</td>
             </tr>

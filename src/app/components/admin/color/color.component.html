@@ -16,27 +16,15 @@
         </thead>
         <tbody>
             <tr *ngFor="let color of colors">
-                <!-- <td class="id_column">{{ color.id }}</td> -->
                 <td>
-                    <ul class="actions">
-                        <li class="actions__item"
-                            (click)="onEditColor(color)">
-                            <img    src="assets/media/icons/edit.png" 
-                                    alt=""
-                                    class="action__icon">
-                        </li>
-                        <li class="actions__item"
-                            (click)="onDeleteColor(color)">
-                            <img    src="assets/media/icons/delete.png" 
-                                    alt=""
-                                    class="action__icon">
-                        </li>
-                    </ul>
+                    <app-actions    (edit)="onEditColor(color)"
+                                    (delete)="onDeleteColor(color)">
+                    </app-actions>
                 </td>
                 <td>{{ color.code }}</td>
                 <td>{{ color.desc_en }}<br>
                 {{ color.desc_es }}</td>
-                <td [style.background]="color.hex_code"><!-- {{ color.hex_code }} --></td>
+                <td [style.background]="color.hex_code"></td>
             </tr>
         </tbody>
     </table>

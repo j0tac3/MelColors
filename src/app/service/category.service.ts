@@ -15,4 +15,20 @@ export class CategoryService {
   getCategories() : Observable<any> {
     return this.http.get<any>(this.url_prod);
   }
+
+  addCategory(category: Category): Observable<any>{
+    const headers = { 'content-type' : 'application/json' };
+    const body = JSON.stringify(category);
+    return this.http.post<Category>(this.url_prod, body, {'headers': headers});
+  };
+
+  updateCategory(category: Category): Observable<any>{
+    const headers = { 'content-type' : 'application/json' };
+    const body = JSON.stringify(category);
+    return this.http.put<Category>(this.url_prod, body, {'headers': headers});
+  };
+
+  deleteCategory(category: Category): Observable<any>{
+    return this.http.delete(`${this.url_prod}/${category.id}`);
+  };
 }

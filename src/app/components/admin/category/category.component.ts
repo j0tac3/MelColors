@@ -9,17 +9,47 @@ import { CategoryService } from 'src/app/service/category.service';
 })
 export class CategoryComponent implements OnInit {
   public categories! : Category[];
+  public currentCategory! : Category;
+  public openModal = false;
 
   constructor( private categoryService : CategoryService ) { }
   
   ngOnInit(): void {
-    this.getCompanies();
+    this.getCategories();
   }
 
-  getCompanies(){
+  getCategories(){
     this.categoryService.getCategories()
     .subscribe(resp => {
       this.categories = resp.data;
     });
+  }
+
+  onAddCategory(category : Category){
+    this.openModal = false;
+    this.categories.push(category);
+  }
+
+  onUpdateCategory(category : Category){
+    this.categoryService.updateCategory(category)
+    .subscribe(resp => {
+      this.getCategories();
+    })
+  }
+
+  onDeleteCategory(categoryToDelete : Category){
+    this.categoryService.deleteCategory(categoryToDelete)
+    .subscribe(resp => {
+      let categoriesFiltered = this.categories.filter(category => categoryToDelete.id !== category.id);
+      this.categories = categoriesFiltered;
+    });
+  }
+
+  onOpenModal(){
+    this.openModal = true;
+  }
+
+  onCloseModal(){
+    this.openModal = false;
   }
 }

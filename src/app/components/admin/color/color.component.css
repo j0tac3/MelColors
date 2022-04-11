@@ -22,29 +22,3 @@ tr:nth-child(odd){
     color: #fff;
     padding: .5rem 1rem;
 }
-.actions{
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.actions__item{
-    height: 100%;
-    width: 100%;
-    margin: .2rem;
-    padding: .2rem;
-    box-sizing: border-box;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.action__icon{
-    width: 1.2rem;
-}
-.actions__item:hover{
-    cursor: pointer;
-    background-color: rgba(0, 0, 0, .2);
-}
