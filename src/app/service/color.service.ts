@@ -16,6 +16,10 @@ export class ColorService {
     return this.http.get(this.url_prod);
   };
 
+  getcolorscompany(company : string) : Observable<any>{
+    return this.http.get(`${this.url_prod}s/${company}`);
+  }
+
   addColort(color: ColorObject): Observable<any>{
     const headers = { 'content-type' : 'application/json' };
     const body = JSON.stringify(color);

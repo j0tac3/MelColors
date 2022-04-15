@@ -1,0 +1,29 @@
+/* Zona del menu de marcas */
+.companies__menu{
+    width: 100%;
+    margin-top: 5rem;
+}
+.companies{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+}
+.company{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+
+    transition: transform .2s;
+}
+.company:hover{
+    cursor: pointer;
+    transform: translateY(-5px);
+}
+.company__logo{
+    width: 5rem;    
+}
+.logo__vallejo{
+    filter: invert(1);
+}

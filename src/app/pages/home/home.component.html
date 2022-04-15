@@ -1,7 +1,8 @@
 <div class="container">
-    <app-buscador (textToSearch)="onTextToSearch($event)">
-    </app-buscador>
-    <div class="sections">
+    <!-- <app-buscador (textToSearch)="onTextToSearch($event)">
+    </app-buscador> -->
+    <router-outlet></router-outlet>
+   <!--  <div class="sections">
         <section    class="quienes_somos"
                     [ngClass]="{'hidden_presentation':isSearching}">
             <h2 class="title">Qué es MelColors?</h2>
@@ -13,8 +14,7 @@
         </section>
         <section    class="color_zone"
                     [ngClass]="{'ShowColor':isSearching}">
-            <!-- <app-filtro (onFiltered)="filterItemsByFilter($event)"></app-filtro> -->
             <app-color-list [colors]="colorToSee"></app-color-list>
         </section>
-    </div>
+    </div> -->
 </div>

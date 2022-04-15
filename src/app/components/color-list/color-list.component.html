@@ -1,5 +1,9 @@
-<ul class="colors">
-    <li *ngFor="let color of colors">
-        <app-color-card [color]="color"></app-color-card>
-    </li>
-</ul>
+<div class="container">
+    <app-buscador (textToSearch)="onTextToSearch($event)">
+    </app-buscador>
+    <ul class="colors">
+        <li *ngFor="let color of colorToSee">
+            <app-color-card [color]="color"></app-color-card>
+        </li>
+    </ul>
+</div>

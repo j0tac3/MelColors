@@ -22,6 +22,7 @@ import { ModalAddEditColorComponent } from './components/admin/color/modal-add-e
 import { ModalAddEditCompanyComponent } from './components/admin/company/modal-add-edit-company/modal-add-edit-company.component';
 import { ActionsComponent } from './components/admin/actions/actions.component';
 import { ModalAddEditCategoryComponent } from './components/admin/category/modal-add-edit-category/modal-add-edit-category.component';
+import { MenuCompaniesComponent } from './components/menu-companies/menu-companies.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { ModalAddEditCategoryComponent } from './components/admin/category/modal
     ModalAddEditColorComponent,
     ModalAddEditCompanyComponent,
     ActionsComponent,
-    ModalAddEditCategoryComponent
+    ModalAddEditCategoryComponent,
+    MenuCompaniesComponent
   ],
   imports: [
     BrowserModule,
