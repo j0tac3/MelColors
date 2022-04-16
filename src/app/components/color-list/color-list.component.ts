@@ -28,11 +28,12 @@ export class ColorListComponent implements OnInit {
 
   getColors(){
     if (!this.colors){
-      //this.colorService.getcolorscompany(this.company)
-      this.colorService.getColor()
+      this.colorService.getcolorscompany(this.company)
+      //this.colorService.getColor()
       .subscribe( resp => {
+        console.log(resp);
         this.colors = resp.data;
-        this.colorToSee = this.colors.filter(color => color.company_id == 4);
+        this.colorToSee = resp.data;
       });
     }
   }

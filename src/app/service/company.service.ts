@@ -26,7 +26,7 @@ export class CompanyService {
   updateCompany(company: Company): Observable<any>{
     const headers = { 'content-type' : 'application/json' };
     const body = JSON.stringify(company);
-    return this.http.put<Company>(this.url_prod, body, {'headers': headers});
+    return this.http.put<Company>(`${this.url_prod}/${company.id}`, body, {'headers': headers});
   };
 
   deleteCompany(company: Company): Observable<any>{
