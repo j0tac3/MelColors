@@ -6,3 +6,34 @@
 
     width: 100%;
 }
+
+
+
+/* Zona del menu de marcas */
+.company__menu{
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+.company{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+
+    transition: transform .2s;
+}
+.company:not(:last-child){
+    margin-right: 2rem;
+}
+.company:hover{
+    cursor: pointer;
+    transform: translateY(-5px);
+}
+.company__logo{
+    width: 3rem;    
+}
+.logo__vallejo{
+    filter: invert(1);
+}

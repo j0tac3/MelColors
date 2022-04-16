@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Color } from 'src/app/models/color.model';
 import { ColorObject } from 'src/app/models/colorobject.model';
 import { ColorService } from 'src/app/service/color.service';
@@ -15,7 +15,8 @@ export class ColorListComponent implements OnInit {
   private company! : string;
 
   constructor( private colorService : ColorService,
-                private actRoute : ActivatedRoute ) { }
+                private actRoute : ActivatedRoute,
+                private router : Router) { }
 
   ngOnInit(): void {
     this.getCompany();
@@ -27,15 +28,12 @@ export class ColorListComponent implements OnInit {
   }
 
   getColors(){
-    if (!this.colors){
-      this.colorService.getcolorscompany(this.company)
-      //this.colorService.getColor()
-      .subscribe( resp => {
-        console.log(resp);
-        this.colors = resp.data;
-        this.colorToSee = resp.data;
-      });
-    }
+    this.colorService.getcolorscompany(this.company)
+    //this.colorService.getColor()
+    .subscribe( resp => {
+      this.colors = resp.data;
+      this.colorToSee = resp.data;
+    });
   }
 
   onTextToSearch(text : any){
@@ -61,6 +59,12 @@ export class ColorListComponent implements OnInit {
     this.colorToSee = this.colors.filter(function(color) {
       return (color.company_id! == filter.company_id) && (color.category_id! == filter.category_id);
     })
+  }
+
+  gotToPage(routeToGo : string){
+    this.router.navigateByUrl(`home/colors/${routeToGo}`);
+    this.company = routeToGo;
+    this.getColors();
   }
 
 }

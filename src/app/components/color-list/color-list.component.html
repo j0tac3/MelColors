@@ -1,4 +1,17 @@
 <div class="container">
+    <ul class="company__menu">
+        <li class="company">
+            <img    src="assets/media/logos/vallejo_logo_short.png" 
+                    alt="Logo Vallejo"
+                    (click)="gotToPage('Vallejo')"
+                    class="company__logo logo__vallejo">
+        </li>
+        <li class="company" (click)="gotToPage('AK')">
+            <img    src="assets/media/logos/ak_logo.png" 
+                    alt="Logo Vallejo"
+                    class="company__logo">
+        </li>
+    </ul>
     <app-buscador (textToSearch)="onTextToSearch($event)">
     </app-buscador>
     <ul class="colors">
