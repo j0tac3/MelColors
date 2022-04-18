@@ -16,7 +16,6 @@
     display: flex;
     align-items: flex-start;
     justify-content: center;
-
     transition: transform .2s;
 }
 .company:hover{
