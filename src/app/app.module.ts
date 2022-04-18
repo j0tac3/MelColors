@@ -23,6 +23,7 @@ import { ModalAddEditCompanyComponent } from './components/admin/company/modal-a
 import { ActionsComponent } from './components/admin/actions/actions.component';
 import { ModalAddEditCategoryComponent } from './components/admin/category/modal-add-edit-category/modal-add-edit-category.component';
 import { MenuCompaniesComponent } from './components/menu-companies/menu-companies.component';
+import { MiniMenuCompaniesComponent } from './components/mini-menu-companies/mini-menu-companies.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { MenuCompaniesComponent } from './components/menu-companies/menu-compani
     ModalAddEditCompanyComponent,
     ActionsComponent,
     ModalAddEditCategoryComponent,
-    MenuCompaniesComponent
+    MenuCompaniesComponent,
+    MiniMenuCompaniesComponent
   ],
   imports: [
     BrowserModule,

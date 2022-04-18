@@ -12,7 +12,7 @@ import { ColorService } from 'src/app/service/color.service';
 export class ColorListComponent implements OnInit {
   @Input() colors! : ColorObject[];
   public colorToSee! : ColorObject[];
-  private company! : string;
+  public company! : string;
 
   constructor( private colorService : ColorService,
                 private actRoute : ActivatedRoute,
@@ -61,7 +61,7 @@ export class ColorListComponent implements OnInit {
     })
   }
 
-  gotToPage(routeToGo : string){
+  onGoToPage(routeToGo : any){
     this.router.navigateByUrl(`home/colors/${routeToGo}`);
     this.company = routeToGo;
     this.getColors();
