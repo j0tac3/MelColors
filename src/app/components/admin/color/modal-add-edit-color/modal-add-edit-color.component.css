@@ -18,6 +18,9 @@
     padding: 1rem;
     position: relative;
     border-radius: 5px;
+    height: 100%;
+    max-height: 30rem;
+    overflow-y: auto;
 }
 .close__icon{
     position: absolute;
@@ -35,7 +38,7 @@
     box-shadow: 5px 5px 10px -5px #7777;
 }
 .title{
-    margin-top: 2rem;
+    margin: 0;
     color: #777;
 }
 .control{
@@ -54,7 +57,7 @@
     background-color: transparent;
 }
 .buttons{
-    margin: 1rem 0;
+    margin-top: 1.5rem;
     display: grid;
     grid-gap: .7rem;
 }

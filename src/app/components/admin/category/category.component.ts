@@ -10,6 +10,7 @@ import { CategoryService } from 'src/app/service/category.service';
 export class CategoryComponent implements OnInit {
   public categories! : Category[];
   public currentCategory! : Category;
+  public emptyCategory! : Category;
   public openModal = false;
 
   constructor( private categoryService : CategoryService ) { }
@@ -31,10 +32,8 @@ export class CategoryComponent implements OnInit {
   }
 
   onUpdateCategory(category : Category){
-    this.categoryService.updateCategory(category)
-    .subscribe(resp => {
-      this.getCategories();
-    })
+    this.openModal = false;
+    this.getCategories();
   }
 
   onDeleteCategory(categoryToDelete : Category){
@@ -45,11 +44,17 @@ export class CategoryComponent implements OnInit {
     });
   }
 
+  onEditCategory(category : Category){
+    this.currentCategory = category;
+    this.openModal = true;
+  }
+
   onOpenModal(){
     this.openModal = true;
   }
 
   onCloseModal(){
     this.openModal = false;
+    this.currentCategory = this.emptyCategory;
   }
 }

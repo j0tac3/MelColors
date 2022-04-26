@@ -1,11 +1,14 @@
 .admin__menu{
     list-style: none;
-    padding: 0;
+    padding: 1rem 0;
     margin: 0;
-
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+
 }
 .admin__item{
     display: grid;

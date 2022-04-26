@@ -12,13 +12,14 @@
         <thead>
             <th class="id_column">ID</th>
             <th>Descripcion</th>
-            <th>Descr. Corta</th>
+            <th>Desc. Corta</th>
         </thead>
         <tbody>
             <tr *ngFor="let category of categories">
                 <td class="id_column">
                     <app-actions    (edit)="onUpdateCategory(category)"
-                                    (delete)="onDeleteCategory(category)">
+                                    (delete)="onDeleteCategory(category)"
+                                    (click)="onEditCategory(category)">
                     </app-actions>
                 </td>
                 <td>{{ category.desc }}</td>

@@ -25,7 +25,7 @@ export class CategoryService {
   updateCategory(category: Category): Observable<any>{
     const headers = { 'content-type' : 'application/json' };
     const body = JSON.stringify(category);
-    return this.http.put<Category>(this.url_prod, body, {'headers': headers});
+    return this.http.put<Category>(`${this.url_prod}/${category.id}`, body, {'headers': headers});
   };
 
   deleteCategory(category: Category): Observable<any>{

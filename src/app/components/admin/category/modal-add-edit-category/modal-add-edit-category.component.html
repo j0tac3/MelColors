@@ -6,6 +6,21 @@
                 (click)="onCloseModal()">
         <h2 class="title">Nueva Categoria</h2>
         <div class="control">
+                <input  type="hidden"
+                        class="input__text"
+                        formControlName="id">
+        </div>
+        <div class="control">
+            <label  for=""
+                    class="label">Marca</label>
+            <select formControlName="company_id">
+                <option [value]="company.id"
+                        *ngFor="let company of companies">
+                    {{ company.desc }}
+                </option>
+            </select>
+        </div>
+        <div class="control">
             <label  for=""
                     class="label">Descripción</label>
             <input  type="text"

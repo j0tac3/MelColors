@@ -1,7 +1,9 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Category } from 'src/app/models/category.model';
+import { Company } from 'src/app/models/company.model';
 import { CategoryService } from 'src/app/service/category.service';
+import { CompanyService } from 'src/app/service/company.service';
 
 @Component({
   selector: 'app-modal-add-edit-category',
@@ -14,20 +16,44 @@ export class ModalAddEditCategoryComponent implements OnInit {
   @Output() addCategory = new EventEmitter<Category>();
   @Output() updateCategory = new EventEmitter<Category>();
 
+  public companies! : Company[];
+
   public newCategory! : FormGroup;
 
   constructor( private categoryService : CategoryService,
+                private companyService : CompanyService,
                 private fb : FormBuilder) { }
 
   ngOnInit(): void {
     this.onInitForm();
+    this.onGetCompanies();
+    this.onFillForm();
+    console.log(this.currentCategory);
   }
 
   onInitForm(){
     this.newCategory = this.fb.group({
+      id : new FormControl(''),
       desc : new FormControl('', Validators.required),
-      short_desc : new FormControl('', Validators.required),
+      short_desc : new FormControl(''),
+      company_id : new FormControl(''),
     });
+  }
+
+  onFillForm(){
+    if(this.currentCategory){
+      this.newCategory.get('id')?.setValue(this.currentCategory.id);
+      this.newCategory.get('desc')?.setValue(this.currentCategory.desc);
+      this.newCategory.get('short_desc')?.setValue(this.currentCategory.short_desc);
+      this.newCategory.get('company_id')?.setValue(this.currentCategory.company_id);
+    }
+  }
+
+  onGetCompanies(){
+    this.companyService.getCompany()
+    .subscribe(resp => {
+      this.companies = resp.data;
+    })
   }
 
   onSaveCcategory(){

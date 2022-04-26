@@ -32,6 +32,7 @@ export class ModalAddEditColorComponent implements OnInit {
     //this.onGetCompanies();
     this.onGetCategories();
     this.onInitCurrentColor();
+    console.log(this.currentColor);
   }
 
   onInitForm(){
