@@ -57,7 +57,7 @@ export class ColorListComponent implements OnInit {
   filterItemsByFilter( filter : any ){
     //this.colorToSee = this.colors.filter(function(color) {
     this.colorToSee = this.colors.filter(function(color) {
-      return (color.company_id! == filter.company_id) && (color.category_id! == filter.category_id);
+      //return (color.company_id! == filter.company_id) && (color.category_id! == filter.category_id);
     })
   }
 

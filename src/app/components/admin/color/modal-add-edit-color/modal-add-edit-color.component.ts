@@ -18,7 +18,7 @@ export class ModalAddEditColorComponent implements OnInit {
   @Output() addColor = new EventEmitter<ColorObject>();
   @Input() currentColor! : ColorObject;
 
-  public companies! : Company[];
+  //public companies! : Company[];
   public categories! : Category[];
   public newColor! : FormGroup;
 
@@ -29,7 +29,7 @@ export class ModalAddEditColorComponent implements OnInit {
 
   ngOnInit(): void {
     this.onInitForm();
-    this.onGetCompanies();
+    //this.onGetCompanies();
     this.onGetCategories();
     this.onInitCurrentColor();
   }
@@ -37,10 +37,10 @@ export class ModalAddEditColorComponent implements OnInit {
   onInitForm(){
     this.newColor = this.fb.group({
       id : new FormControl(''),
-      code : new FormControl('', Validators.required),
-      desc_es : new FormControl('', Validators.required),
-      desc_en : new FormControl('', Validators.required),
-      company_id : new FormControl('', Validators.required),
+      code : new FormControl(''),
+      desc_es : new FormControl(''),
+      desc_en : new FormControl(''),
+      //company_id : new FormControl('', Validators.required),
       category_id : new FormControl('', Validators.required),
       hex_code : new FormControl('')
     });
@@ -52,18 +52,18 @@ export class ModalAddEditColorComponent implements OnInit {
       this.newColor.get('code')?.setValue(this.currentColor.code);
       this.newColor.get('desc_es')?.setValue(this.currentColor.desc_es);
       this.newColor.get('desc_en')?.setValue(this.currentColor.desc_en);
-      this.newColor.get('company_id')?.setValue(this.currentColor.company_id);
+      //this.newColor.get('company_id')?.setValue(this.currentColor.company_id);
       this.newColor.get('category_id')?.setValue(this.currentColor.category_id);
       this.newColor.get('hex_code')?.setValue(this.currentColor.hex_code);
     }
   }
 
-  onGetCompanies(){
+  /* onGetCompanies(){
     this.companySercie.getCompany()
     .subscribe(resp => {
       this.companies = resp.data;
     })
-  }
+  } */
 
   onGetCategories(){
     this.categoryservice.getCategories()
