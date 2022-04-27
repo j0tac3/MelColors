@@ -1,7 +1,9 @@
 <div class="container">
-    <!-- <app-buscador (textToSearch)="onTextToSearch($event)">
-    </app-buscador> -->
-    <router-outlet></router-outlet>
+    <app-buscador (textToSearch)="onTextToSearch($event)">
+    </app-buscador>
+    <app-list-of-colors>
+    </app-list-of-colors>
+    <!-- <router-outlet></router-outlet> -->
    <!--  <div class="sections">
         <section    class="quienes_somos"
                     [ngClass]="{'hidden_presentation':isSearching}">

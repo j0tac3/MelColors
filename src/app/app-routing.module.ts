@@ -8,7 +8,7 @@ import { HOME_ROUTES } from './pages/home/home.routes';
 const APP_ROUTES: Routes = [
   /* {path: 'home', component: HomeComponent }, */
   {path: 'home', component: HomeComponent,
-    children: HOME_ROUTES,
+    //children: HOME_ROUTES,
   },
   {path: 'administrar', component: AdministrarComponent,
     children: ADMINISTRAR_ROUTES,

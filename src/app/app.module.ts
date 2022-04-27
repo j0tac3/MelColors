@@ -24,6 +24,7 @@ import { ActionsComponent } from './components/admin/actions/actions.component';
 import { ModalAddEditCategoryComponent } from './components/admin/category/modal-add-edit-category/modal-add-edit-category.component';
 import { MenuCompaniesComponent } from './components/menu-companies/menu-companies.component';
 import { MiniMenuCompaniesComponent } from './components/mini-menu-companies/mini-menu-companies.component';
+import { ListOfColorsComponent } from './components/list-of-colors/list-of-colors.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { MiniMenuCompaniesComponent } from './components/mini-menu-companies/min
     ActionsComponent,
     ModalAddEditCategoryComponent,
     MenuCompaniesComponent,
-    MiniMenuCompaniesComponent
+    MiniMenuCompaniesComponent,
+    ListOfColorsComponent
   ],
   imports: [
     BrowserModule,
