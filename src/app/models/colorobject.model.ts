@@ -3,6 +3,7 @@ export class ColorObject{
     //public company_id? : number;
     public category_id? : number;
     public category_desc? : number;
+    public company? : string;
     public code? : string;
     public desc_en? : string;
     public desc_es? : string;
@@ -13,6 +14,7 @@ export class ColorObject{
         //this.company_id = ( object.company_id ) ? object.company_id : null;
         this.category_id = ( object.category_id ) ? object.category_id : null;
         this.category_desc = ( object.category_desc ) ? object.category_desc : null;
+        this.company = ( object.company ) ? object.company : null;
         this.code = ( object.code ) ? object.code : null;
         this.desc_en = ( object.desc_en ) ? object.desc_en : null;
         this.desc_es = ( object.desc_es ) ? object.desc_es : null;

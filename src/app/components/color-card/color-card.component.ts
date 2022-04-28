@@ -9,6 +9,7 @@ import { ColorObject } from 'src/app/models/colorobject.model';
 })
 export class ColorCardComponent implements OnInit {
   @Input() color! : ColorObject;
+  public isLargeColor = false;
 
   constructor() { }
 
@@ -32,6 +33,10 @@ export class ColorCardComponent implements OnInit {
     } else {
       this.color.level_color = 100;
     } */
+  }
+
+  onLargeColor(){
+    this.isLargeColor = !this.isLargeColor;
   }
 
 }

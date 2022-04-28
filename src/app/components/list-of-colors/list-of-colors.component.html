@@ -1,5 +1,8 @@
 <div class="container">
-    <app-color-card *ngFor="let color of colors"
-                    [color]="color">
-    </app-color-card>
+    <div *ngFor="let company of companies">
+        <h3 class="company__title">{{company}}</h3>
+        <app-color-card *ngFor="let color of getColorsCompany(company)"
+                        [color]="color">
+        </app-color-card>
+    </div>
 </div>

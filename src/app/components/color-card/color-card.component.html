@@ -10,7 +10,9 @@
             </ul>
         </div>
         <div    class="color__image" 
-                [style.background]="color.hex_code">
+                [style.background]="color.hex_code"
+                [ngClass]="{'large__color': isLargeColor}"
+                (click)="onLargeColor()">
         </div>
     </div>
     <!-- <ul class="list actions">

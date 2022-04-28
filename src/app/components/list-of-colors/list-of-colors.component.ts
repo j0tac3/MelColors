@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ColorObject } from 'src/app/models/colorobject.model';
+import { Company } from 'src/app/models/company.model';
 import { ColorService } from 'src/app/service/color.service';
 
 @Component({
@@ -9,6 +10,7 @@ import { ColorService } from 'src/app/service/color.service';
 })
 export class ListOfColorsComponent implements OnInit {
   public colors! : ColorObject[];
+  public companies = new Array;
 
   constructor(private colorService : ColorService) { }
 
@@ -20,8 +22,20 @@ export class ListOfColorsComponent implements OnInit {
     this.colorService.getColor()
     .subscribe(resp => {
       this.colors = resp.data;
-       console.log(this.colors)
+      console.log(this.colors)
+      this.onGetCompanies();
     });
+  }
+
+  onGetCompanies(){
+    for (const color of this.colors){
+      this.companies.push(color.company);
+    }
+    this.companies = [... new Set(this.companies)];
+  }
+
+  getColorsCompany(company : string){
+    return this.colors.filter(color => color.company == company);
   }
 
 }
